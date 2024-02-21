@@ -1,0 +1,14 @@
+D:\NoteApp\NoteApp\bin\Debug\NoteApp.exe.config
+D:\NoteApp\NoteApp\bin\Debug\NoteApp.exe
+D:\NoteApp\NoteApp\bin\Debug\NoteApp.pdb
+D:\NoteApp\NoteApp\obj\Debug\NoteApp.csproj.AssemblyReference.cache
+D:\NoteApp\NoteApp\obj\Debug\NoteApp.csproj.CoreCompileInputs.cache
+D:\NoteApp\NoteApp\obj\Debug\NoteApp.exe
+D:\NoteApp\NoteApp\obj\Debug\NoteApp.pdb
+D:\Total_C#_Project\ConsoleApp\NoteApp\NoteApp\bin\Debug\NoteApp.exe.config
+D:\Total_C#_Project\ConsoleApp\NoteApp\NoteApp\bin\Debug\NoteApp.exe
+D:\Total_C#_Project\ConsoleApp\NoteApp\NoteApp\bin\Debug\NoteApp.pdb
+D:\Total_C#_Project\ConsoleApp\NoteApp\NoteApp\obj\Debug\NoteApp.csproj.AssemblyReference.cache
+D:\Total_C#_Project\ConsoleApp\NoteApp\NoteApp\obj\Debug\NoteApp.csproj.CoreCompileInputs.cache
+D:\Total_C#_Project\ConsoleApp\NoteApp\NoteApp\obj\Debug\NoteApp.exe
+D:\Total_C#_Project\ConsoleApp\NoteApp\NoteApp\obj\Debug\NoteApp.pdb

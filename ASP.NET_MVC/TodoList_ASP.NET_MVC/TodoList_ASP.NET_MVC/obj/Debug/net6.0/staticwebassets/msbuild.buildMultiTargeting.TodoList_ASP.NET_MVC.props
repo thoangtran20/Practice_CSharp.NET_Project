@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TodoList_ASP.NET_MVC.props" />
+</Project>
