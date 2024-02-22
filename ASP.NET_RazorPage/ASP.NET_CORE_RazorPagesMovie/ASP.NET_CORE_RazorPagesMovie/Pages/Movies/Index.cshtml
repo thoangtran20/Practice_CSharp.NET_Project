@@ -1,0 +1,78 @@
+﻿@page
+@model ASP.NET_CORE_RazorPagesMovie.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movies List</h1>
+
+<p>
+    <a class="" asp-page="Create">Create New</a>
+</p>
+<form class="form-inline">
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="MovieGenre" class="mr-2">Genre:</label>
+            <select class="form-control mr-2 my-1" asp-for="MovieGenre" asp-items="Model.Genres">
+                <option value="">All</option>
+            </select>
+        </div>
+
+        <div class="form-group mr-2 col-md-6">
+            <label for="SearchString" class="mr-2">Title:</label>
+            <input type="text" class="form-control my-1" asp-for="SearchString" />
+        </div>
+    </div>
+   
+
+    <button type="submit" class="btn btn-primary my-2">Filter</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie[0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Movie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
