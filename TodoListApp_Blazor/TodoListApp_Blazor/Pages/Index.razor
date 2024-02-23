@@ -1,0 +1,60 @@
+﻿@page "/"
+@using Data
+@using TodoListApp_Blazor.Components
+
+@inject TodoItemService Service
+
+@code {
+    private List<TodoItem> _data;
+    private string _current;
+    private TodoItem _item;
+    protected override void OnInitialized()
+    {
+        _data = Service.GetData();
+        _item = _data != null && _data.Count > 0 ? _data[0] : null;
+    }
+    private void Add()
+    {
+        if (!string.IsNullOrWhiteSpace(_current))
+            _data.Add(new TodoItem() { Title = _current });
+    }
+    private void Clear() => _data.RemoveAll(i => i.Done);
+    private void ClearAll() => _data.Clear();
+    private void DoTheThing(KeyboardEventArgs eventArgs)
+    {
+        if (eventArgs.Key == "Enter")
+        {
+            Add();
+        }
+    }
+    private void Save() => Service.SaveChanges();
+}
+<div class="input-group mb-3">
+    <input @bind="_current" type="text" class="form-control" placeholder="Todo" @onkeyup="DoTheThing"/>
+    <div class="input-group-prepend">
+        <button @onclick="Add" class="btn btn-outline-success" type="button">Add</button>
+    </div>
+</div>
+<TodoListItem Item="_item" />
+<ol class="list-group">
+    @foreach (var i in _data)
+    {
+        <li>
+            <div class="input-group mb-3 @(i.Done ? "border border-success" : "")">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <input type="checkbox" @bind="i.Done" class="custom-check" />
+                    </span>
+                </div>
+                <input type="text" @bind="i.Title" class="form-control" placeholder="Todo" @onfocus="@(e => _item = i)" />
+                <input type="text" @bind="i.Note" class="form-control" placeholder="Note" @onfocus="@(e => _item = i)"/>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-danger" type="button" @onclick="@(e=>_data.Remove(i))">Delete</button>
+                </div>
+            </div>
+        </li>
+    }
+</ol>
+<button @onclick="Clear" class="btn btn-outline-danger">Remove done</button>
+<button @onclick="ClearAll" class="btn btn-outline-danger">Clear All</button>
+<button @onclick="Save" class="btn btn-outline-primary">Save</button>
