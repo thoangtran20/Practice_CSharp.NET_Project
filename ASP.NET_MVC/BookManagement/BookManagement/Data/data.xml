@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Book>
+    <Id>1</Id>
+    <Name>Ghi Chép Pháp Y - Những Thi Thể Không Hoàn Chỉnh</Name>
+    <Author>Lưu Bát Bách</Author>
+    <Publisher>AZ Việt Nam</Publisher>
+    <Year>2023</Year>
+    <Description>sdadssdfasdfsdfasdfasdf</Description>
+  </Book>
+  <Book>
+    <Id>2</Id>
+    <Name>Eureka! Khoảnh Khắc Sáng Tạo Xuất Thần</Name>
+    <Author>Yew Kam Keong</Author>
+    <Publisher>Bách Việt</Publisher>
+    <Year>2020</Year>
+  </Book>
+  <Book>
+    <Id>3</Id>
+    <Name>Càng Bình Tĩnh Càng Hạnh Phúc</Name>
+    <Author>Vãn Tình</Author>
+    <Publisher>AZ Việt Nam</Publisher>
+    <Year>2022</Year>
+  </Book>
+  <Book>
+    <Id>4</Id>
+    <Name>Càng Độc Lập Càng Cao Quý</Name>
+    <Author>Vãn Tình</Author>
+    <Publisher>1980 Books</Publisher>
+    <Year>2022</Year>
+  </Book>
+  <Book>
+    <Id>6</Id>
+    <Name>ádfasd</Name>
+    <Author>sda</Author>
+    <Publisher>fasdf</Publisher>
+    <Year>2024</Year>
+    <Description>ádfsdafasdf</Description>
+  </Book>
+  <Book>
+    <Id>5</Id>
+    <Name>ádf</Name>
+    <Author>ádfsdfa</Author>
+    <Publisher>ádfasd</Publisher>
+    <Year>2024</Year>
+    <Description>áddsfasdasd</Description>
+  </Book>
+  <Book>
+    <Id>7</Id>
+    <Name>ádfádfasdf</Name>
+    <Author>ádfád</Author>
+    <Publisher>ádfasd</Publisher>
+    <Year>2024</Year>
+    <Description>ádfsdsdf</Description>
+  </Book>
+</ArrayOfBook>
