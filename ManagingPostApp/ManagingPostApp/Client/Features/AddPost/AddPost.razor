@@ -1,0 +1,18 @@
+﻿@page "/addpost"
+@layout MainLayout
+@inherits AddPostModel
+
+<WdHeader Heading="WordDaze" SubHeading="Add Post"></WdHeader>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="editor">
+                <input @bind=@Title placeholder="Title" class="form-control" />
+                <textarea @bind=@Post placeholder="Write your post" rows="10"></textarea>
+                <br />
+                <button class="btn btn-primary float-right" @onclick="@SavePost">Post</button>
+            </div>
+        </div>
+    </div>
+</div>

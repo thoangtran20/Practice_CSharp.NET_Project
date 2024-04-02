@@ -1,3 +1,4 @@
+using ManagingPostApp.Server;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton(typeof(BlogPostService));
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
