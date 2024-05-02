@@ -1,0 +1,46 @@
+﻿@using BlazorDapperSPA.Models
+@using BlazorDapperSPA.Service;
+@page "/listcities"
+@inject ICityService CityService
+
+<h2>City Details</h2>
+
+<p>
+    <a href="/addcity">Create New City</a>
+</p
+
+@if (cities == null)
+{
+    <img src="./basicloader.gif" />
+}
+else
+{
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>State</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var city in cities)
+            {
+                <tr>
+                    <td>@city.Name</td>
+                    <td>@city.State</td>
+                    <td>
+                        <a href='/editcity/@city.Id'>Edit</a>
+                        <a href='/deletecity/@city.Id'>Delete</a>
+                    </td>                
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    IEnumerable<City> cities;
+    protected override async Task OnInitializedAsync()
+    {
+        cities = await CityService.GetCities();
+    }
+}
