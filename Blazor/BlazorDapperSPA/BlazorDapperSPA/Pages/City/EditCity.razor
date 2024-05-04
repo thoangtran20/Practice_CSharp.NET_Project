@@ -1,0 +1,53 @@
+﻿@using BlazorDapperSPA.Models
+@using BlazorDapperSPA.Service
+@page "/editcity/{id:int}"
+@inject NavigationManager NavigationManager
+@inject ICityService CityService
+
+<h2>EditCity</h2>
+<hr />
+<EditForm Model="@city" OnValidSubmit="@UpdateCity">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                <label for="Name" class="control-label">Name</label>
+                <input for="Name" class="form-control" @bind="@city.Name" />
+                <ValidationMessage For="@(() => city.Name)" />
+            </div>
+            <div class="form-group">
+                <label for="Name" class="control-label">State</label>
+                <input for="Name" class="form-control" @bind="@city.State" />
+                <ValidationMessage For="@(() => city.State)" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 my-3">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <input type="button" class="btn btn-secondary" @onclick="@Cancel" value="Cancel" />
+            </div>
+        </div>          
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    City city = new City();
+    protected override async Task OnInitializedAsync()
+    {
+        city = await CityService.SingleCity(id);
+    }
+    protected async Task UpdateCity()
+    {
+        await CityService.EditCity(id, city);
+        NavigationManager.NavigateTo("listcities");
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("listcities");
+    }
+}

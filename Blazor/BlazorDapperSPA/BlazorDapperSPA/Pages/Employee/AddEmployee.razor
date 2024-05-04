@@ -1,0 +1,74 @@
+﻿@using BlazorDapperSPA.Models
+@using BlazorDapperSPA.Service;
+@page "/addemployee"
+@inject NavigationManager NavigationManager
+@inject IEmployeeService EmployeeService
+@inject ICityService CityService
+
+<h2>Create Employee</h2>
+<hr />
+<EditForm Model="@employee" OnValidSubmit="@CreateEmployee">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="form-group">
+                <label for="Name" class="control-label">Name</label>
+                <input for="Name" class="form-control" @bind="@employee.Name" />
+                <ValidationMessage For="@(() => employee.Name)" />
+            </div>
+            <div class="form-group">
+                <label for="Department" class="control-label">Department</label>
+                <input for="Department" class="form-control" @bind="@employee.Department" />
+                <ValidationMessage For="@(() => employee.Department)" />
+            </div>
+            <div class="form-group">
+                <label for="Designation" class="control-label">Designation</label>
+                <input for="Designation" class="form-control" @bind="@employee.Designation" />
+                <ValidationMessage For="@(() => employee.Designation)" />
+            </div>
+            <div class="form-group">
+                <label for="Company" class="control-label">Company</label>
+                <input for="Company" class="form-control" @bind="@employee.Company" />
+                <ValidationMessage For="@(() => employee.Company)" />
+            </div>
+            <div class="form-group">
+                <label for="City" class="control-label">Department</label>
+                <select for="City" class="form-control" @bind="@employee.CityId">
+                    <option value="">-- Select City --</option>
+                    @foreach (var city in cities) 
+                    {
+                        <option value="@city.Id">@city.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 my-3">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <input type="button" class="btn btn-secondary" @onclick="@Cancel" value="Cancel" />
+                </div>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    Employee employee = new Employee();
+    IEnumerable<City> cities = new List<City>();
+    protected override async Task OnInitializedAsync()
+    {
+        cities = await CityService.GetCities();
+    }
+    protected async Task CreateEmployee()
+    {
+        await EmployeeService.CreateEmployee(employee);
+        NavigationManager.NavigateTo("listemployees");
+    }
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("listemployees");
+    }
+}
