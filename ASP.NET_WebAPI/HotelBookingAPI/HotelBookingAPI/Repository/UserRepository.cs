@@ -48,7 +48,7 @@ namespace HotelBookingAPI.Repository
             var message = errorMessageParam.Value?.ToString();
             createUserResponseDTO.IsCreated = false;
             createUserResponseDTO.Message = message ?? "An unknown error occurred while creating the user.";
-            return createUserResponseDTO;      
+            return createUserResponseDTO;
         }
         public async Task<UserRoleResponseDTO> AssignRoleToUserAsync(UserRoleDTO userRole)
         {
@@ -68,7 +68,7 @@ namespace HotelBookingAPI.Repository
             await connection.OpenAsync();
             await command.ExecuteNonQueryAsync();
             var message = errorMessageParam.Value?.ToString();
-            if (!string.IsNullOrEmpty(message)) 
+            if (!string.IsNullOrEmpty(message))
             {
                 userRoleResponseDTO.Message = message;
                 userRoleResponseDTO.IsAssigned = false;
@@ -78,7 +78,7 @@ namespace HotelBookingAPI.Repository
                 userRoleResponseDTO.Message = "User Role Assigned";
                 userRoleResponseDTO.IsAssigned = true;
             }
-            return userRoleResponseDTO; 
+            return userRoleResponseDTO;
         }
         public async Task<List<UserResponseDTO>> ListAllUsersAsync(bool? isActive)
         {
@@ -132,6 +132,127 @@ namespace HotelBookingAPI.Repository
                 LastLogin = reader.GetValueByColumn<DateTime?>("LastLogin"),
             };
             return user;
+        }
+        public async Task<UpdateUserResponseDTO> UpdateUserAsync(UpdateUserDTO user)
+        {
+            UpdateUserResponseDTO updateUserResponseDTO = new UpdateUserResponseDTO()
+            {
+                UserId = user.UserID
+            };
+            using var connection = _connectionFactory.CreateConnection();
+            using var command = new SqlCommand("spUpdateUserInformation", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            command.Parameters.AddWithValue("@UserID", user.UserID);
+            command.Parameters.AddWithValue("@Email", user.Email);
+            command.Parameters.AddWithValue("@Password", user.Password);
+            command.Parameters.AddWithValue("ModifiedBy", "System");
+            var errorMessageParam = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, 255)
+            {
+                Direction = ParameterDirection.Output
+            };
+            command.Parameters.Add(errorMessageParam);
+            await connection.OpenAsync();
+            await command.ExecuteNonQueryAsync();
+            var message = errorMessageParam.Value?.ToString();
+            if (string.IsNullOrEmpty(message))
+            {
+                updateUserResponseDTO.Message = "User Information Updated.";
+                updateUserResponseDTO.IsUpdated = true;
+            }
+            else
+            {
+                updateUserResponseDTO.Message = message;
+                updateUserResponseDTO.IsUpdated = false;
+            }
+            return updateUserResponseDTO;
+        }
+        public async Task<DeleteUserResponseDTO> DeleteUserAsync(int userId)
+        {
+            DeleteUserResponseDTO deleteUserResponseDTO = new DeleteUserResponseDTO();
+            using var connection = _connectionFactory.CreateConnection();
+            using var command = new SqlCommand("spToggleUserActive", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            command.Parameters.AddWithValue("@UserID", userId);
+            command.Parameters.AddWithValue("@IsActive", false);
+            var errorMessageParam = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, 255)
+            {
+                Direction = ParameterDirection.Output
+            };
+            command.Parameters.Add(errorMessageParam);
+            await connection.OpenAsync();
+            await command.ExecuteNonQueryAsync();
+            var message = errorMessageParam.Value?.ToString();
+            if (!string.IsNullOrEmpty(message))
+            {
+                deleteUserResponseDTO.Message = message;
+                deleteUserResponseDTO.IsDeleted = false;
+            }
+            else
+            {
+                deleteUserResponseDTO.Message = "User Deleted.";
+                deleteUserResponseDTO.IsDeleted = true;
+            }
+            return deleteUserResponseDTO;
+        }
+        public async Task<LoginUserResponseDTO> LoginUserAsync(LoginUserDTO login)
+        {
+            LoginUserResponseDTO userLoginResponseDTO = new LoginUserResponseDTO();
+            using var connection = _connectionFactory.CreateConnection();
+            using var command = new SqlCommand("spLoginUser", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            command.Parameters.AddWithValue("@Email", login.Email);
+            command.Parameters.AddWithValue("@PasswordHash", login.Password); // Ensure password is hashed
+            var userIdParam = new SqlParameter("@UserID", SqlDbType.Int)
+            {
+                Direction = ParameterDirection.Output
+            };
+            var errorMessageParam = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, 255)
+            {
+                Direction = ParameterDirection.Output
+            };
+            command.Parameters.Add(userIdParam);
+            command.Parameters.Add(errorMessageParam);
+            await connection.OpenAsync();
+            await command.ExecuteNonQueryAsync();
+            var success = userIdParam.Value != DBNull.Value && (int)userIdParam.Value > 0;
+            if (success)
+            {
+                var userId = Convert.ToInt32(userIdParam.Value);
+                userLoginResponseDTO.UserId = userId;
+                userLoginResponseDTO.IsLogin = true;
+                userLoginResponseDTO.Message = "Login Successful";
+                return userLoginResponseDTO;
+            }
+            var message = errorMessageParam.Value?.ToString();
+            userLoginResponseDTO.IsLogin = false;
+            userLoginResponseDTO.Message = message;
+            return userLoginResponseDTO;
+        }
+        public async Task<(bool Success, string Message)> ToggleUserActiveAsync(int userId, bool isActive)
+        {
+            using var connection = _connectionFactory.CreateConnection();
+            using var command = new SqlCommand("spToggleUserActive", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+            command.Parameters.AddWithValue("@UserID", userId);
+            command.Parameters.AddWithValue("@IsActive", isActive);
+            var errorMessageParam = new SqlParameter("@ErrorMessage", SqlDbType.NVarChar, 255)
+            {
+                Direction = ParameterDirection.Output
+            };
+            command.Parameters.Add(errorMessageParam);
+            await connection.OpenAsync();
+            await command.ExecuteNonQueryAsync();
+            var message = errorMessageParam.Value?.ToString();
+            var success = string.IsNullOrEmpty(message);
+            return (success, message);
         }
     }
 }

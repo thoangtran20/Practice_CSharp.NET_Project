@@ -1,0 +1,22 @@
+2024-05-16 16:43:38.434 +07:00 [INF] Request Received for GetUserById, ID: 4
+2024-05-16 16:49:42.772 +07:00 [INF] Request Received for AddUser: {"Email":"test@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:49:42.830 +07:00 [INF] AddUser Response From Repository: {"UserId":1,"Message":"User Created Successfully","IsCreated":true,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:49:44.274 +07:00 [INF] Request Received for AddUser: {"Email":"test@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:49:44.281 +07:00 [INF] AddUser Response From Repository: {"UserId":0,"Message":"A user with the given email already exists.","IsCreated":false,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:49:45.062 +07:00 [INF] Request Received for AddUser: {"Email":"test@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:49:45.065 +07:00 [INF] AddUser Response From Repository: {"UserId":0,"Message":"A user with the given email already exists.","IsCreated":false,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:50:03.748 +07:00 [INF] Request Received for AddUser: {"Email":"test@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:50:03.749 +07:00 [INF] AddUser Response From Repository: {"UserId":0,"Message":"A user with the given email already exists.","IsCreated":false,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:50:04.724 +07:00 [INF] Request Received for AddUser: {"Email":"test@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:50:04.725 +07:00 [INF] AddUser Response From Repository: {"UserId":0,"Message":"A user with the given email already exists.","IsCreated":false,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:50:05.103 +07:00 [INF] Request Received for AddUser: {"Email":"test@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:50:05.105 +07:00 [INF] AddUser Response From Repository: {"UserId":0,"Message":"A user with the given email already exists.","IsCreated":false,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:50:22.126 +07:00 [INF] Request Received for AddUser: {"Email":"test@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:50:22.137 +07:00 [INF] AddUser Response From Repository: {"UserId":0,"Message":"A user with the given email already exists.","IsCreated":false,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:50:42.767 +07:00 [INF] Request Received for AddUser: {"Email":"test12@gmail.com","Password":"123456","$type":"CreateUserDTO"}
+2024-05-16 16:50:42.790 +07:00 [INF] AddUser Response From Repository: {"UserId":2,"Message":"User Created Successfully","IsCreated":true,"$type":"CreateUserResponseDTO"}
+2024-05-16 16:55:27.647 +07:00 [INF] Request Received for GetUserById, ID: 1
+2024-05-16 16:55:28.803 +07:00 [INF] Request Received for GetUserById, ID: 1
+2024-05-16 16:56:30.012 +07:00 [INF] Request Received for GetAllUsers, IsActive: 
+2024-05-16 16:56:31.503 +07:00 [INF] Request Received for GetAllUsers, IsActive: 
+2024-05-16 16:56:31.610 +07:00 [INF] Request Received for GetAllUsers, IsActive: 

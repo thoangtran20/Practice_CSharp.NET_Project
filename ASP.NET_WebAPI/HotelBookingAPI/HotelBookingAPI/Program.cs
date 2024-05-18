@@ -1,3 +1,5 @@
+using HotelBookingAPI.Connection;
+using HotelBookingAPI.Repository;
 using Serilog;
 
 namespace HotelBookingAPI
@@ -24,6 +26,8 @@ namespace HotelBookingAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddSingleton<SqlConnectionFactory>();
+            builder.Services.AddScoped<UserRepository>();
 
             var app = builder.Build();
 
