@@ -2,7 +2,7 @@ USE HotelDB
 GO	
 
 -- Create Room Type
-CREATE PROCEDURE spCreateRoomType
+CREATE OR ALTER PROCEDURE spCreateRoomType
 	@TypeName NVARCHAR(50),
 	@AccessibilityFeatures NVARCHAR(255),
 	@Description NVARCHAR(255),
@@ -40,7 +40,7 @@ END
 GO	
 
 -- Update Room Type
-CREATE PROCEDURE spUpdateRoomType
+CREATE OR ALTER PROCEDURE spUpdateRoomType
 	@RoomTypeID INT,
 	@TypeName NVARCHAR(50),
 	@AccessibilityFeatures NVARCHAR(255),
@@ -91,7 +91,7 @@ BEGIN
 END
 
 -- Delete Room Type By Id
-CREATE PROCEDURE spDeleteRoomType 
+CREATE OR ALTER PROCEDURE spDeleteRoomType 
 	@RoomTypeID INT,
 	@StatusCode INT OUTPUT,
 	@Message NVARCHAR(255) OUTPUT
@@ -130,7 +130,7 @@ BEGIN
 END
 
 -- Get Room Type By Id
-CREATE PROCEDURE spGetRoomTypeById 
+CREATE OR ALTER PROCEDURE spGetRoomTypeById 
 	@RoomTypeID INT
 AS	
 BEGIN
@@ -141,7 +141,7 @@ END
 GO	
 
 -- Get All Room Type
-CREATE PROCEDURE spGetAllRoomTypes
+CREATE OR ALTER PROCEDURE spGetAllRoomTypes
 	@IsActive BIT = NULL -- Optional parameter to filter by IsActive status
 AS
 BEGIN
@@ -159,7 +159,7 @@ BEGIN
 END
 
 -- Activate/Deactivate RoomType
-CREATE PROCEDURE spToggleRoomTypeActive
+CREATE OR ALTER PROCEDURE spToggleRoomTypeActive
 	@RoomTypeID INT,
 	@IsActive BIT,
 	@StatusCode INT OUTPUT,

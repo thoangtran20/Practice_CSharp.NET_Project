@@ -28,6 +28,7 @@ namespace HotelBookingAPI
             builder.Services.AddSwaggerGen();
             builder.Services.AddSingleton<SqlConnectionFactory>();
             builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<RoomTypeRepository>();
 
             var app = builder.Build();
 
@@ -39,7 +40,6 @@ namespace HotelBookingAPI
             }
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 

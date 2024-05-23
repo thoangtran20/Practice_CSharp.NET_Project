@@ -1,0 +1,13 @@
+2024-05-21 14:03:38.846 +07:00 [INF] Request Received for CreateRoomType: {"TypeName":"asdfsdaf","AccessibilityFeatures":"123321","Description":"adsfasdf","$type":"CreateRoomTypeDTO"}
+2024-05-21 14:03:43.389 +07:00 [INF] CreateRoomType Response From Repository: {"RoomTypeID":5,"Message":"Room type created successfully.","IsCreated":true,"$type":"CreateRoomTypeResponseDTO"}
+2024-05-21 14:04:05.901 +07:00 [INF] Request Received for GetAllRoomTypes, IsActive: 
+2024-05-21 14:04:21.898 +07:00 [INF] Request Received for DeleteRoomType, RoomTypeID: 5
+2024-05-21 14:04:24.160 +07:00 [INF] Request Received for DeleteRoomType, RoomTypeID: 5
+2024-05-21 14:04:34.008 +07:00 [INF] Request Received for GetAllRoomTypes, IsActive: 
+2024-05-21 14:04:40.415 +07:00 [INF] Request Received for GetAllRoomTypes, IsActive: 
+2024-05-21 14:04:57.568 +07:00 [INF] Request Received for DeleteRoomType, RoomTypeID: 5
+2024-05-21 14:06:01.974 +07:00 [INF] Request Received for DeleteRoomType, RoomTypeID: 5
+2024-05-21 14:06:27.153 +07:00 [INF] Request Received for DeleteRoomType, RoomTypeID: 4
+2024-05-21 14:06:32.477 +07:00 [INF] Request Received for GetAllRoomTypes, IsActive: 
+2024-05-21 14:24:02.058 +07:00 [INF] Request Received for DeleteRoomType, RoomTypeID: 5
+2024-05-21 14:24:14.233 +07:00 [INF] Request Received for GetAllRoomTypes, IsActive: 

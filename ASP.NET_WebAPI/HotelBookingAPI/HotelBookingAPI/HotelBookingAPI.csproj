@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\RoomDTOs\" />
     <Folder Include="DTOs\PaymentDTOs\" />
   </ItemGroup>
 
