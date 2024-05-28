@@ -1,0 +1,5 @@
+2024-05-27 00:14:01.008 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":null,"Status":null,"$type":"GetAllRoomsRequestDTO"}
+2024-05-27 00:14:19.772 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":1,"Status":null,"$type":"GetAllRoomsRequestDTO"}
+2024-05-27 00:14:30.610 +07:00 [INF] Request Received for GetRoomById, id: 1
+2024-05-27 00:14:34.026 +07:00 [INF] Request Received for GetRoomById, id: 2
+2024-05-27 00:14:36.283 +07:00 [INF] Request Received for GetRoomById, id: 213
