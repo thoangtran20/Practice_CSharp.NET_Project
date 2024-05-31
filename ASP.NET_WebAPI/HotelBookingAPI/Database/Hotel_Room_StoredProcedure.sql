@@ -20,27 +20,26 @@ BEGIN
 	BEGIN TRY
 		BEGIN TRANSACTION
 			-- Check if the provided RoomTypeID exists in the RoomTypes table
-			IF NOT EXISTS (SELECT 1 FROM dbo.RoomTypes WHERE RoomTypeID = @RoomTypeID)
-			BEGIN
-				-- Ensure the room number is unique
-				IF NOT EXISTS (SELECT 1 FROM dbo.Rooms WHERE RoomNumber = @RoomNumber)
+			IF EXISTS (SELECT 1 FROM dbo.RoomTypes WHERE RoomTypeID = @RoomTypeID)
 				BEGIN
-				    INSERT INTO Rooms (RoomNumber, RoomTypeID, Price, BedType, ViewType, Status, 
-						IsActive, CreatedBy, CreatedDate)
-                    VALUES (@RoomNumber, @RoomTypeID, @Price, @BedType, @ViewType, @Status, 
-						@IsActive, @CreatedBy, GETDATE())
+					-- Ensure the room number is unique
+					IF NOT EXISTS (SELECT 1 FROM dbo.Rooms WHERE RoomNumber = @RoomNumber)
+					BEGIN
+						INSERT INTO Rooms (RoomNumber, RoomTypeID, Price, BedType, ViewType, Status, 
+							IsActive, CreatedBy, CreatedDate)
+						VALUES (@RoomNumber, @RoomTypeID, @Price, @BedType, @ViewType, @Status, 
+							@IsActive, @CreatedBy, GETDATE())
 
-					SET @NewRoomID = SCOPE_IDENTITY()
-					SET @StatusCode = 0 -- Success
-					SET @Message = 'Room created successfully.'
+						SET @NewRoomID = SCOPE_IDENTITY()
+						SET @StatusCode = 0 -- Success
+						SET @Message = 'Room created successfully.'
+					END
+					ELSE
+					BEGIN
+						SET @StatusCode = 1 -- Failure due to duplicate name
+						SET @Message = 'Room number already exists.'
+					END	    
 				END
-			    
-			END
-			ELSE
-			BEGIN
-			    SET @StatusCode = 1 -- Failure due to duplicate name
-				SET @Message = 'Room number already exists.'
-			END
 		COMMIT TRANSACTION
 	END TRY
 	BEGIN CATCH
@@ -190,3 +189,6 @@ BEGIN
                        @RoomTypeID, 
                        @Status
 END
+
+EXEC dbo.spGetAllRooms @RoomTypeID = 1, -- int
+                       @Status = N'Available'    -- nvarchar(50)

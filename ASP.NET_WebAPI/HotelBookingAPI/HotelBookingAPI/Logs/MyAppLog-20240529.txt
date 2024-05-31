@@ -1,0 +1,21 @@
+2024-05-29 11:07:41.521 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":null,"Status":null,"$type":"GetAllRoomsRequestDTO"}
+2024-05-29 11:10:47.651 +07:00 [INF] Request Received for GetRoomById, id: 4
+2024-05-29 11:12:51.050 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":null,"Status":null,"$type":"GetAllRoomsRequestDTO"}
+2024-05-29 11:13:05.837 +07:00 [INF] Reqest Received for CreateRoom: {"RoomNumber":"12","RoomTypeID":1231244,"Price":23423,"BedType":"ádfsf","ViewType":"ádfasdf","Status":"Available","IsActive":true,"$type":"CreateRoomRequestDTO"}
+2024-05-29 11:13:05.943 +07:00 [INF] CreateRoom Response From Repository: {"RoomID":0,"Message":"The INSERT statement conflicted with the FOREIGN KEY constraint \"FK__Rooms__RoomTypeI__4222D4EF\". The conflict occurred in database \"HotelDB\", table \"dbo.RoomTypes\", column 'RoomTypeID'.","IsCreated":false,"$type":"CreateRoomResponseDTO"}
+2024-05-29 11:13:19.897 +07:00 [INF] Reqest Received for CreateRoom: {"RoomNumber":"12","RoomTypeID":1,"Price":23423,"BedType":"ádfsf","ViewType":"ádfasdf","Status":"Available","IsActive":true,"$type":"CreateRoomRequestDTO"}
+2024-05-29 11:13:19.899 +07:00 [INF] CreateRoom Response From Repository: {"RoomID":0,"Message":"Room number already exists.","IsCreated":false,"$type":"CreateRoomResponseDTO"}
+2024-05-29 11:13:27.923 +07:00 [INF] Reqest Received for CreateRoom: {"RoomNumber":"13","RoomTypeID":1,"Price":23423,"BedType":"ádfsf","ViewType":"ádfasdf","Status":"Available","IsActive":true,"$type":"CreateRoomRequestDTO"}
+2024-05-29 11:13:27.970 +07:00 [INF] CreateRoom Response From Repository: {"RoomID":0,"Message":"Room number already exists.","IsCreated":false,"$type":"CreateRoomResponseDTO"}
+2024-05-29 11:13:48.803 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":null,"Status":null,"$type":"GetAllRoomsRequestDTO"}
+2024-05-29 11:13:58.728 +07:00 [INF] Reqest Received for CreateRoom: {"RoomNumber":"132","RoomTypeID":1,"Price":23423,"BedType":"ádfsf","ViewType":"ádfasdf","Status":"Available","IsActive":true,"$type":"CreateRoomRequestDTO"}
+2024-05-29 11:13:58.731 +07:00 [INF] CreateRoom Response From Repository: {"RoomID":0,"Message":"Room number already exists.","IsCreated":false,"$type":"CreateRoomResponseDTO"}
+2024-05-29 11:14:24.060 +07:00 [INF] Reqest Received for CreateRoom: {"RoomNumber":"102","RoomTypeID":1,"Price":23423,"BedType":"ádfsf","ViewType":"ádfasdf","Status":"Available","IsActive":true,"$type":"CreateRoomRequestDTO"}
+2024-05-29 11:14:24.083 +07:00 [INF] CreateRoom Response From Repository: {"RoomID":0,"Message":"Room number already exists.","IsCreated":false,"$type":"CreateRoomResponseDTO"}
+2024-05-29 11:14:29.257 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":null,"Status":null,"$type":"GetAllRoomsRequestDTO"}
+2024-05-29 11:15:50.217 +07:00 [INF] Reqest Received for CreateRoom: {"RoomNumber":"102","RoomTypeID":1,"Price":23423,"BedType":"ádfsf","ViewType":"ádfasdf","Status":"Available","IsActive":true,"$type":"CreateRoomRequestDTO"}
+2024-05-29 11:15:50.221 +07:00 [INF] CreateRoom Response From Repository: {"RoomID":0,"Message":"Room number already exists.","IsCreated":false,"$type":"CreateRoomResponseDTO"}
+2024-05-29 11:23:08.923 +07:00 [INF] Reqest Received for CreateRoom: {"RoomNumber":"123","RoomTypeID":2,"Price":999999.99,"BedType":"12s","ViewType":"43s","Status":"Available","IsActive":true,"$type":"CreateRoomRequestDTO"}
+2024-05-29 11:23:10.013 +07:00 [INF] CreateRoom Response From Repository: {"RoomID":7,"Message":"Room created successfully.","IsCreated":true,"$type":"CreateRoomResponseDTO"}
+2024-05-29 11:23:18.755 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":null,"Status":null,"$type":"GetAllRoomsRequestDTO"}
+2024-05-29 11:23:19.902 +07:00 [INF] Request Received for CreateRoomType: {"RoomTypeID":null,"Status":null,"$type":"GetAllRoomsRequestDTO"}

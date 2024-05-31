@@ -1,0 +1,46 @@
+2024-05-31 17:22:18.157 +07:00 [ERR] Error occurred while adding amenity.
+System.IndexOutOfRangeException: A SqlParameter with ParameterName 'Message' is not contained by this SqlParameterCollection.
+   at Microsoft.Data.SqlClient.SqlParameterCollection.GetParameter(String parameterName)
+   at Microsoft.Data.SqlClient.SqlParameterCollection.get_Item(String parameterName)
+   at HotelBookingAPI.Repository.AmenityRepository.AddAmenityAsync(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Repository\AmenityRepository.cs:line 98
+   at HotelBookingAPI.Controllers.AmenityController.AddAmenity(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Controllers\AmenityController.cs:line 70
+2024-05-31 17:22:34.719 +07:00 [ERR] Error occurred while adding amenity.
+System.IndexOutOfRangeException: A SqlParameter with ParameterName 'Message' is not contained by this SqlParameterCollection.
+   at Microsoft.Data.SqlClient.SqlParameterCollection.GetParameter(String parameterName)
+   at Microsoft.Data.SqlClient.SqlParameterCollection.get_Item(String parameterName)
+   at HotelBookingAPI.Repository.AmenityRepository.AddAmenityAsync(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Repository\AmenityRepository.cs:line 105
+   at HotelBookingAPI.Controllers.AmenityController.AddAmenity(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Controllers\AmenityController.cs:line 70
+2024-05-31 17:29:40.623 +07:00 [INF] UpdateRoom Mismatched Amenity ID
+2024-05-31 17:29:43.091 +07:00 [INF] UpdateRoom Mismatched Amenity ID
+2024-05-31 17:31:32.139 +07:00 [ERR] Error occurred while adding amenity.
+System.IndexOutOfRangeException: A SqlParameter with ParameterName 'Message' is not contained by this SqlParameterCollection.
+   at Microsoft.Data.SqlClient.SqlParameterCollection.GetParameter(String parameterName)
+   at Microsoft.Data.SqlClient.SqlParameterCollection.get_Item(String parameterName)
+   at HotelBookingAPI.Repository.AmenityRepository.AddAmenityAsync(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Repository\AmenityRepository.cs:line 98
+   at HotelBookingAPI.Controllers.AmenityController.AddAmenity(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Controllers\AmenityController.cs:line 70
+2024-05-31 17:32:05.842 +07:00 [ERR] Error occurred while adding amenity.
+System.IndexOutOfRangeException: A SqlParameter with ParameterName 'Message' is not contained by this SqlParameterCollection.
+   at Microsoft.Data.SqlClient.SqlParameterCollection.GetParameter(String parameterName)
+   at Microsoft.Data.SqlClient.SqlParameterCollection.get_Item(String parameterName)
+   at HotelBookingAPI.Repository.AmenityRepository.AddAmenityAsync(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Repository\AmenityRepository.cs:line 98
+   at HotelBookingAPI.Controllers.AmenityController.AddAmenity(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Controllers\AmenityController.cs:line 70
+2024-05-31 17:32:22.028 +07:00 [ERR] Error occurred while adding amenity.
+System.IndexOutOfRangeException: A SqlParameter with ParameterName 'Message' is not contained by this SqlParameterCollection.
+   at Microsoft.Data.SqlClient.SqlParameterCollection.GetParameter(String parameterName)
+   at Microsoft.Data.SqlClient.SqlParameterCollection.get_Item(String parameterName)
+   at HotelBookingAPI.Repository.AmenityRepository.AddAmenityAsync(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Repository\AmenityRepository.cs:line 105
+   at HotelBookingAPI.Controllers.AmenityController.AddAmenity(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Controllers\AmenityController.cs:line 70
+2024-05-31 17:37:44.928 +07:00 [ERR] Error occurred while adding amenity.
+System.IndexOutOfRangeException: A SqlParameter with ParameterName 'Message' is not contained by this SqlParameterCollection.
+   at Microsoft.Data.SqlClient.SqlParameterCollection.GetParameter(String parameterName)
+   at Microsoft.Data.SqlClient.SqlParameterCollection.get_Item(String parameterName)
+   at HotelBookingAPI.Repository.AmenityRepository.AddAmenityAsync(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Repository\AmenityRepository.cs:line 98
+   at HotelBookingAPI.Controllers.AmenityController.AddAmenity(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Controllers\AmenityController.cs:line 70
+2024-05-31 17:37:49.558 +07:00 [ERR] Error occurred while adding amenity.
+System.IndexOutOfRangeException: A SqlParameter with ParameterName 'Message' is not contained by this SqlParameterCollection.
+   at Microsoft.Data.SqlClient.SqlParameterCollection.GetParameter(String parameterName)
+   at Microsoft.Data.SqlClient.SqlParameterCollection.get_Item(String parameterName)
+   at HotelBookingAPI.Repository.AmenityRepository.AddAmenityAsync(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Repository\AmenityRepository.cs:line 105
+   at HotelBookingAPI.Controllers.AmenityController.AddAmenity(AmenityInsertDTO amenity) in D:\Total_C#_Project\ASP.NET_WebAPI\HotelBookingAPI\HotelBookingAPI\Controllers\AmenityController.cs:line 70
+2024-05-31 17:57:18.805 +07:00 [INF] UpdateRoom Mismatched Amenity ID
+2024-05-31 17:57:21.315 +07:00 [INF] UpdateRoom Mismatched Amenity ID

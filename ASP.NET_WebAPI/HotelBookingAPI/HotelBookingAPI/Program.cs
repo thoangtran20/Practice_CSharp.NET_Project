@@ -30,6 +30,7 @@ namespace HotelBookingAPI
             builder.Services.AddScoped<UserRepository>();
             builder.Services.AddScoped<RoomTypeRepository>();
             builder.Services.AddScoped<RoomRepository>();
+            builder.Services.AddScoped<AmenityRepository>();
 
             var app = builder.Build();
 
