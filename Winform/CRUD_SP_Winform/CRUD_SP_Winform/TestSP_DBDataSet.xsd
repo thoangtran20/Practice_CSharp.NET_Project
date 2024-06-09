@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TestSP_DBDataSet" targetNamespace="http://tempuri.org/TestSP_DBDataSet.xsd" xmlns:mstns="http://tempuri.org/TestSP_DBDataSet.xsd" xmlns="http://tempuri.org/TestSP_DBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TestSP_DBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TestSP_DBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CRUD_SP_Winform.Properties.Settings.GlobalReference.Default.TestSP_DBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EmpTestTableAdapter" GeneratorDataComponentClassName="EmpTestTableAdapter" Name="EmpTest" UserDataComponentName="EmpTestTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TestSP_DBConnectionString (Settings)" DbObjectName="TestSP_DB.dbo.EmpTest" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT City, JoiningDate, Contact FROM dbo.EmpTest</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="JoiningDate" DataSetColumn="JoiningDate" />
+              <Mapping SourceColumn="Contact" DataSetColumn="Contact" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TestSP_DBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="TestSP_DBDataSet" msprop:Generator_DataSetName="TestSP_DBDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EmpTest" msprop:Generator_RowEvHandlerName="EmpTestRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpTestRowDeleted" msprop:Generator_RowDeletingName="EmpTestRowDeleting" msprop:Generator_RowEvArgName="EmpTestRowChangeEvent" msprop:Generator_TablePropName="EmpTest" msprop:Generator_RowChangedName="EmpTestRowChanged" msprop:Generator_RowChangingName="EmpTestRowChanging" msprop:Generator_TableClassName="EmpTestDataTable" msprop:Generator_RowClassName="EmpTestRow" msprop:Generator_TableVarName="tableEmpTest" msprop:Generator_UserTableName="EmpTest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="City" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JoiningDate" msprop:Generator_ColumnPropNameInRow="JoiningDate" msprop:Generator_ColumnPropNameInTable="JoiningDateColumn" msprop:Generator_ColumnVarNameInTable="columnJoiningDate" msprop:Generator_UserColumnName="JoiningDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Contact" msprop:Generator_ColumnPropNameInRow="Contact" msprop:Generator_ColumnPropNameInTable="ContactColumn" msprop:Generator_ColumnVarNameInTable="columnContact" msprop:Generator_UserColumnName="Contact" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
